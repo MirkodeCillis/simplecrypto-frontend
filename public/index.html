@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top" lang="it">
+<head>
+    <meta charset="utf-8"/>
+    <link href="%PUBLIC_URL%/icons/favicon/favicon.ico" rel="icon"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="#2f3136" name="theme-color"/>
+    <meta
+            content="Web site created using create-react-app"
+            name="description"
+    />
+    <link crossorigin href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="%PUBLIC_URL%/icons/favicon/favicon-300x300.png" rel="apple-touch-icon"/>
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link crossorigin="use-credentials" href="%PUBLIC_URL%/manifest.json" rel="manifest"/>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Camipass</title>
+    <script async defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body class="is-dark">
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root">
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const burger = document.querySelector('.navbar-burger')
+        const menu = document.querySelector('.navbar-menu')
+        const items = document.querySelectorAll('.navbar-item')
+        burger.addEventListener('click', function () {
+            console.log('click')
+            console.log(burger.classList)
+            burger.classList.toggle('is-active');
+            console.log(burger.classList)
+            menu.classList.toggle('is-active');
+        })
+
+        items.forEach(item => {
+            item.addEventListener('click', function () {
+                burger.classList.remove('is-active');
+                menu.classList.remove('is-active');
+            })
+        })
+    });
+</script>
+</body>
+</html>
