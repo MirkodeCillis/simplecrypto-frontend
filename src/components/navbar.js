@@ -24,21 +24,22 @@ export default function NavBar() {
             <div className="navbar-menu">
                 <div className="navbar-start">
                     <Link className="navbar-item" to="/">Home</Link>
-                    <Link className="navbar-item" to="/rooms">Room</Link>
+                    <Link className="navbar-item" to="/currencies">Market</Link>
+                    <Link className="navbar-item" to="/community">Community</Link>
                 </div>
                 {auth.user ? (
                     <div className="navbar-end">
-                        <Link className="navbar-item" to="/account">
-                            <FontAwesomeIcon icon={faUser} size="1x"
-                                             style={{color: auth.user.color}}/>&nbsp; {auth.user.username} &nbsp;
+                        <Link className="navbar-item" to="/dashboard">
+                            <FontAwesomeIcon icon={faUser} size="1x"/>
+                            &nbsp; {auth.user.username} &nbsp;
                         </Link>
                         <span className="navbar-item nav-button is-success"
-                              onClick={() => auth.signout()}>Disconnetti</span>
+                              onClick={() => auth.signout()}>Log Out</span>
                     </div>
                 ) : (
                     <div className="navbar-end">
-                        <Link className="navbar-item nav-button is-primary" to="/login"><b>Log In</b></Link>
-                        <Link className="navbar-item nav-button is-success" to="/signup"><b>Sign Up</b></Link>
+                        <Link className="navbar-item" to="/login">Log In</Link>
+                        <Link className="navbar-item" to="/signup">Sign Up</Link>
                     </div>
                 )
                 }
