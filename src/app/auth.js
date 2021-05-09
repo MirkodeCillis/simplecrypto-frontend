@@ -57,7 +57,7 @@ function useProvideAuth() {
                     titleText: "Login effettuato!",
                     text: "Bentornatə! Ci eri mancatə :'(",
                     icon: "success",
-                    background: "#393B41",
+                    background: "#f2f6fa",
                     confirmButtonColor: '#F95F72'
                 }).then((res) => {
                     setUser(user);
@@ -71,37 +71,36 @@ function useProvideAuth() {
                         titleText: "Credenziali errate",
                         text: "L'email o la password non sono corretti.",
                         icon: "error",
-                        background: "#393B41",
+                        background: "#f2f6fa",
                         confirmButtonColor: '#F95F72'
                     });
                 else swal.fire({
                     titleText: "Qualcosa è andato storto :-/",
                     text: "Aggiorna la pagina e riprova.",
                     icon: "error",
-                    background: "#393B41",
+                    background: "#f2f6fa",
                     confirmButtonColor: '#F95F72'
                 });
             });
     };
 
-    const signup = (username, email, password, color) => {
+    const signup = (username, email, password) => {
         let user = {
             username: username,
             email: email,
-            password: password,
-            color: color
+            password: password
         }
         return User.signup(user)
             .then(response => {
                 let user = {
-                    username: response.data.username,
-                    color: response.data.color
+                    id: response.data.id,
+                    username: response.data.username
                 }
                 swal.fire({
                     titleText: "Registrazione completata!",
-                    text: "Benvenutə nel mondo SimpleCrypto!\nEffettua il login per iniziare.",
+                    text: "Effettua il login per iniziare.",
                     icon: "success",
-                    background: "#393B41",
+                    background: "#f2f6fa",
                     confirmButtonColor: '#F95F72'
                 }).then(() => {
                     window.location = "/";
@@ -109,27 +108,19 @@ function useProvideAuth() {
 
                 return user;
             }).catch(err => {
-                if (err.response.status === 410)
-                    swal.fire({
-                        titleText: "Username già esistente",
-                        text: "Qualcunə è arrivatə prima di te :-/",
-                        icon: "error",
-                        background: "#393B41",
-                        confirmButtonColor: '#F95F72'
-                    });
-                else if (err.response.status === 411)
+                if (err.response.status === 409)
                     swal.fire({
                         title: "Email già esistente",
-                        text: "L'indirizzo email è stato già usato. Prova a entrare con quella email.",
+                        text: "L'indirizzo email è stato già usato.",
                         icon: "error",
-                        background: "#393B41",
+                        background: "#f2f6fa",
                         confirmButtonColor: '#F95F72'
                     });
                 else swal.fire({
                         titleText: "Qualcosa è andato storto :-/",
                         text: "Aggiorna la pagina e riprova.",
                         icon: "error",
-                        background: "#393B41",
+                        background: "#f2f6fa",
                         confirmButtonColor: '#F95F72'
                     });
             });
@@ -146,14 +137,14 @@ function useProvideAuth() {
                     title: "Vecchia password non corretta",
                     text: "Inserisci correttamente la vecchia password.",
                     icon: "error",
-                    background: "#393B41",
+                    background: "#f2f6fa",
                     confirmButtonColor: '#F95F72'
                 });
             else swal.fire({
                 titleText: "Qualcosa è andato storto :-/",
                 text: "Aggiorna la pagina e riprova.",
                 icon: "error",
-                background: "#393B41",
+                background: "#f2f6fa",
                 confirmButtonColor: '#F95F72'
             });
         })
@@ -171,7 +162,7 @@ function useProvideAuth() {
                     titleText: "Dati aggiornati!",
                     text: "Effettua di nuovo il login per applicare le modifiche.",
                     icon: "success",
-                    background: "#393B41",
+                    background: "#f2f6fa",
                     confirmButtonColor: '#F95F72'
                 }).then(() => {
                     signout();
@@ -184,7 +175,7 @@ function useProvideAuth() {
                     titleText: "Username già esistente",
                     text: "Qualcunə è arrivatə prima di te :-/",
                     icon: "error",
-                    background: "#393B41",
+                    background: "#f2f6fa",
                     confirmButtonColor: '#F95F72'
                 });
             else if (err.response.status === 411)
@@ -192,25 +183,24 @@ function useProvideAuth() {
                     title: "Email già esistente",
                     text: "L'indirizzo email è stato già usato. Prova a entrare con quella email.",
                     icon: "error",
-                    background: "#393B41",
+                    background: "#f2f6fa",
                     confirmButtonColor: '#F95F72'
                 });
             else swal.fire({
                     titleText: "Qualcosa è andato storto :-/",
                     text: "Aggiorna la pagina e riprova.",
                     icon: "error",
-                    background: "#393B41",
+                    background: "#f2f6fa",
                     confirmButtonColor: '#F95F72'
                 });
         });
     }
 
-    const update = (id, username, email, cambiapassword, oldpassword, newpassword, color) => {
+    const update = (id, username, email, cambiapassword, oldpassword, newpassword) => {
         let user = {
             id: id,
             username: username,
-            email: email,
-            color: color
+            email: email
         }
         let jwt = Cookies.get(REACT_APP_COOKIENAME);
 
@@ -224,7 +214,7 @@ function useProvideAuth() {
             titleText: "Logout effettuato!",
             text: "Sempre a disposizione per servirti :)",
             icon: "success",
-            background: "#393B41",
+            background: "#f2f6fa",
             confirmButtonColor: '#F95F72'
         }).then(() => {
             setUser(false);

@@ -6,11 +6,11 @@ import {Link} from "react-router-dom";
 import {useForm} from "react-hook-form";
 
 export default function Signup(props) {
-    const {register, handleSubmit, formState: {errors}, reset, watch} = useForm();
+    const {register, handleSubmit, formState: {errors}, reset} = useForm();
 
     const onSubmit = data => {
         document.getElementById('submitSignup').disabled = true;
-        props.auth.signup(data.username, data.email, data.password, data.color);
+        props.auth.signup(data.username, data.email, data.password);
         document.getElementById('submitSignup').disabled = false;
     }
 
@@ -69,23 +69,10 @@ export default function Signup(props) {
                         </div>
                         {errors?.password && <p className="help is-danger">{errors?.password?.message}</p>}
                     </div>
-                    <div className="columns field is-grouped is-grouped-centered mt-3">
-                        <label htmlFor="color" className="column labelform">
-                            Scegli il tuo colore!
-                            <div style={{
-                                marginLeft: "0",
-                                width: "2em",
-                                height: "2em",
-                                borderRadius: "50%",
-                                border: "1px lightgray solid",
-                                backgroundColor: watch("color"),
-                            }}/>
-                        </label>
-                    </div>
                     <div className="field is-grouped is-grouped-centered">
                         <p className="control">
                             <input className="button is-primary" style={{margin: "auto"}}
-                                   type="submit" value="Registrati!" id="submitSignup"
+                                   type="submit" value="Sign Up" id="submitSignup"
                             />
                         </p>
                         <p className="control">
@@ -96,7 +83,7 @@ export default function Signup(props) {
                     </div>
                     <div className="field">
                         <p className="control" style={{textAlign: "right"}}>
-                            Già registratə? <Link to={"/login"}>Non perdere altro tempo</Link>.
+                            Ti sei già registrato? <Link to={"/login"}>Accedi</Link>.
                         </p>
                     </div>
                 </form>

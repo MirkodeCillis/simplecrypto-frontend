@@ -31,7 +31,7 @@ export default function Account(props) {
                     titleText: "Campi delle password vuote",
                     text: "Controlla i campi per la nuova password.",
                     icon: "error",
-                    background: "#393B41",
+                    background: "#f2f6fa",
                     confirmButtonColor: '#F95F72'
                 });
                 return;
@@ -41,7 +41,7 @@ export default function Account(props) {
                     titleText: "Le password non coincidono",
                     text: "Controlla i campi per la nuova password.",
                     icon: "error",
-                    background: "#393B41",
+                    background: "#f2f6fa",
                     confirmButtonColor: '#F95F72'
                 });
                 return;
