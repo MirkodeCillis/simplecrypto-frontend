@@ -46,9 +46,12 @@ $beige-lighter: #EFF0EB;
 // Update Bulma's global variables
 $family-sans-serif: "Ubuntu", "Nunito", sans-serif;
 $dark: #393B41;
+$darker: #2F3136;
+$darkest: #202225;
+$light: #c6c4be;
 $grey-dark: $brown;
 $grey-light: $beige-light;
-$text: #FDFFFC;
+$text: $darkest;
 $primary: #F95F72;
 $primary-dark: #A6081A;
 $secondary: #fda806;
@@ -60,9 +63,9 @@ $widescreen-enabled: false;
 $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
-$body-background-color: #2F3136;
-$bg-secondary: #202225;
-$navbar-background-color: $dark;
+$body-background-color: #d0cec9;
+$bg-secondary: #dfddda;
+$navbar-background-color: $light;
 $navbar-padding-vertical: 2rem;
 $control-border-width: 2px;
 $input-border-color: transparent;

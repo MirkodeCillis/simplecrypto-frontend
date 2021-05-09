@@ -1,13 +1,12 @@
 import React from 'react';
-import {Circle} from "react-color/lib/components/circle/Circle";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelope, faKey, faUser} from "@fortawesome/free-solid-svg-icons";
 import '../../style/style.css';
 import {Link} from "react-router-dom";
-import {Controller, useForm} from "react-hook-form";
+import {useForm} from "react-hook-form";
 
 export default function Signup(props) {
-    const {register, handleSubmit, formState: {errors}, control, reset, watch} = useForm();
+    const {register, handleSubmit, formState: {errors}, reset, watch} = useForm();
 
     const onSubmit = data => {
         document.getElementById('submitSignup').disabled = true;
@@ -82,16 +81,6 @@ export default function Signup(props) {
                                 backgroundColor: watch("color"),
                             }}/>
                         </label>
-                        <Controller name="color" control={control}
-                                    rules={{required: {value: true, message: "Colore richiesto"}}}
-                                    defaultValue={{hex: 'f44336', source: 'hex'}}
-                                    render={({field: {onChange, onBlur, value, ref}}) => (
-                                        <Circle
-                                            onChange={(e) => onChange(e.hex)}
-                                        />
-                                    )}
-                        />
-                        {errors?.color && <p className="help is-danger">{errors?.color?.message}</p>}
                     </div>
                     <div className="field is-grouped is-grouped-centered">
                         <p className="control">

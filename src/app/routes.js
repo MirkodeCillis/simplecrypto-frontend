@@ -6,6 +6,9 @@ import AuthLogin from "../pages/login/authLogin";
 import AuthSignup from "../pages/signup/authSignup";
 import PrivateRoute from "./privateRoute";
 import PageNotFound from "../pages/pagenotfound";
+import Community from "../pages/Community";
+import Dashboard from "../pages/Dashboard";
+import Currencies from "../pages/Currencies";
 
 export default class Routes extends React.Component {
     constructor(props) {
