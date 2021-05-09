@@ -1,4 +1,4 @@
-# camipass-client
+# SimpleCrypto-client
 
 Simulatore di investimenti in criptovalute con sezione community.
 Progetto scolastico di Mirko de Cillis come elaborato per gli Esami di Stato.

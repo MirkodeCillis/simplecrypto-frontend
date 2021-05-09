@@ -99,7 +99,7 @@ function useProvideAuth() {
                 }
                 swal.fire({
                     titleText: "Registrazione completata!",
-                    text: "Benvenutə nel mondo Camipass!\nEffettua il login per iniziare.",
+                    text: "Benvenutə nel mondo SimpleCrypto!\nEffettua il login per iniziare.",
                     icon: "success",
                     background: "#393B41",
                     confirmButtonColor: '#F95F72'

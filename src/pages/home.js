@@ -20,7 +20,7 @@ export default function Home() {
         <div>
             <div className='carousel carousel-animated carousel-animate-slide'>
                 <div className='carousel-container carouselhome' id="homecarousel">
-                    <img className="item-1" src="img/slide1.webp" alt="Benvenutə in camipass"/>
+                    <img className="item-1" src="img/slide1.webp" alt="Benvenutə in SimpleCrypto"/>
                     <img className="item-2" src="img/slide2.webp"
                          alt="Chatta con tutti nella room globale... ...oppure entra in una room privata con i tuoi amici"/>
                     <img className="item-3" src="img/slide3.webp"
