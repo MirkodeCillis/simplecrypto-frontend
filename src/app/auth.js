@@ -4,7 +4,7 @@ import swal from "sweetalert2";
 import {parseJwt} from "../components/utils";
 import Cookies from 'js-cookie';
 
-const {REACT_APP_COOKIENAME} = process.env;
+const {REACT_APP_COOKIENAME, REACT_APP_TOKEN_HEADER} = process.env;
 
 const authContext = createContext({
     user: null
@@ -45,23 +45,23 @@ function useProvideAuth() {
         Cookies.remove(REACT_APP_COOKIENAME);
     }
 
-    const signin = (email, password) => {
+    const signin = (username, password) => {
         let user = {
-            email: email,
+            username: username,
             password: password
         };
         return User.login(user)
             .then(response => {
-                let user = parseJwt(response.data);
+                let user = response.data;
                 swal.fire({
                     titleText: "Login effettuato!",
-                    text: "Bentornatə! Ci eri mancatə :'(",
+                    text: "Bentornato! Sei pronto a investire ancora?",
                     icon: "success",
                     background: "#f2f6fa",
-                    confirmButtonColor: '#F95F72'
+                    confirmButtonColor: '#0F6FFF'
                 }).then((res) => {
                     setUser(user);
-                    setCookie(response.data);
+                    setCookie(response.headers[REACT_APP_TOKEN_HEADER]);
                     window.location = "/";
                 });
                 return user;
@@ -69,17 +69,17 @@ function useProvideAuth() {
                 if (err.response && err.response.status === 401)
                     swal.fire({
                         titleText: "Credenziali errate",
-                        text: "L'email o la password non sono corretti.",
+                        text: "L'username o la password non sono corretti.",
                         icon: "error",
                         background: "#f2f6fa",
-                        confirmButtonColor: '#F95F72'
+                        confirmButtonColor: '#0F6FFF'
                     });
                 else swal.fire({
                     titleText: "Qualcosa è andato storto :-/",
                     text: "Aggiorna la pagina e riprova.",
                     icon: "error",
                     background: "#f2f6fa",
-                    confirmButtonColor: '#F95F72'
+                    confirmButtonColor: '#0F6FFF'
                 });
             });
     };
@@ -101,7 +101,7 @@ function useProvideAuth() {
                     text: "Effettua il login per iniziare.",
                     icon: "success",
                     background: "#f2f6fa",
-                    confirmButtonColor: '#F95F72'
+                    confirmButtonColor: '#0F6FFF'
                 }).then(() => {
                     window.location = "/";
                 });
@@ -114,14 +114,14 @@ function useProvideAuth() {
                         text: "L'indirizzo email è stato già usato.",
                         icon: "error",
                         background: "#f2f6fa",
-                        confirmButtonColor: '#F95F72'
+                        confirmButtonColor: '#0F6FFF'
                     });
                 else swal.fire({
                         titleText: "Qualcosa è andato storto :-/",
                         text: "Aggiorna la pagina e riprova.",
                         icon: "error",
                         background: "#f2f6fa",
-                        confirmButtonColor: '#F95F72'
+                        confirmButtonColor: '#0F6FFF'
                     });
             });
     };
@@ -138,14 +138,14 @@ function useProvideAuth() {
                     text: "Inserisci correttamente la vecchia password.",
                     icon: "error",
                     background: "#f2f6fa",
-                    confirmButtonColor: '#F95F72'
+                    confirmButtonColor: '#0F6FFF'
                 });
             else swal.fire({
                 titleText: "Qualcosa è andato storto :-/",
                 text: "Aggiorna la pagina e riprova.",
                 icon: "error",
                 background: "#f2f6fa",
-                confirmButtonColor: '#F95F72'
+                confirmButtonColor: '#0F6FFF'
             });
         })
     }
@@ -163,7 +163,7 @@ function useProvideAuth() {
                     text: "Effettua di nuovo il login per applicare le modifiche.",
                     icon: "success",
                     background: "#f2f6fa",
-                    confirmButtonColor: '#F95F72'
+                    confirmButtonColor: '#0F6FFF'
                 }).then(() => {
                     signout();
                 });
@@ -176,7 +176,7 @@ function useProvideAuth() {
                     text: "Qualcunə è arrivatə prima di te :-/",
                     icon: "error",
                     background: "#f2f6fa",
-                    confirmButtonColor: '#F95F72'
+                    confirmButtonColor: '#0F6FFF'
                 });
             else if (err.response.status === 411)
                 swal.fire({
@@ -184,14 +184,14 @@ function useProvideAuth() {
                     text: "L'indirizzo email è stato già usato. Prova a entrare con quella email.",
                     icon: "error",
                     background: "#f2f6fa",
-                    confirmButtonColor: '#F95F72'
+                    confirmButtonColor: '#0F6FFF'
                 });
             else swal.fire({
                     titleText: "Qualcosa è andato storto :-/",
                     text: "Aggiorna la pagina e riprova.",
                     icon: "error",
                     background: "#f2f6fa",
-                    confirmButtonColor: '#F95F72'
+                    confirmButtonColor: '#0F6FFF'
                 });
         });
     }
@@ -215,7 +215,7 @@ function useProvideAuth() {
             text: "Sempre a disposizione per servirti :)",
             icon: "success",
             background: "#f2f6fa",
-            confirmButtonColor: '#F95F72'
+            confirmButtonColor: '#0F6FFF'
         }).then(() => {
             setUser(false);
             removeCookie();

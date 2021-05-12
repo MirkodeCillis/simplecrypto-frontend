@@ -32,7 +32,7 @@ export default function Account(props) {
                     text: "Controlla i campi per la nuova password.",
                     icon: "error",
                     background: "#f2f6fa",
-                    confirmButtonColor: '#F95F72'
+                    confirmButtonColor: '#0F6FFF'
                 });
                 return;
             }
@@ -42,7 +42,7 @@ export default function Account(props) {
                     text: "Controlla i campi per la nuova password.",
                     icon: "error",
                     background: "#f2f6fa",
-                    confirmButtonColor: '#F95F72'
+                    confirmButtonColor: '#0F6FFF'
                 });
                 return;
             }

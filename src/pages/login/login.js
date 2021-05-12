@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../style/style.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faEnvelope, faKey} from "@fortawesome/free-solid-svg-icons";
+import {faEnvelope, faKey, faUser} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
 import {useForm} from "react-hook-form";
 
@@ -10,7 +10,7 @@ export default function Login(props) {
 
     const submit = (data) => {
         document.getElementById('submitLogin').disabled = true;
-        props.auth.signin(data?.email || '', data?.password || '').then(r => {
+        props.auth.signin(data?.username || '', data?.password || '').then(r => {
             document.getElementById('submitLogin').disabled = false;
         });
     }
@@ -20,18 +20,18 @@ export default function Login(props) {
             <div className="column is-5-desktop is-12-mobile">
                 <form id="signinForm" name="signinForm" onSubmit={handleSubmit(submit)}>
                     <div className="field">
-                        <label className="is-one-third labelform" htmlFor="email"> Email </label>
+                        <label className="is-one-third labelform" htmlFor="username"> Username </label>
                         <div className="control has-icons-left">
-                            <input className="input" name="email" id="email" type="email"
-                                   defaultValue="" {...register("email", {
-                                required: {value: true, message: "Email richiesta"},
-                                minLength: {value: 3, message: "Email più corta di 3 caratteri"}
-                            })}/>
+                            <input className="input is-7" name="username" id="username"
+                                   defaultValue="" {...register("username", {
+                                required: {value: true, message: "Username richiesto"}
+                            })}
+                            />
                             <span className="iconField is-left">
-                                    <FontAwesomeIcon icon={faEnvelope} size="2x"/>
-                                </span>
-                            {errors?.email && <p className="help is-danger">{errors?.email?.message}</p>}
+                                <FontAwesomeIcon icon={faUser} size="2x"/>
+                            </span>
                         </div>
+                        {errors?.username && <p className="help is-danger">{errors?.username?.message}</p>}
                     </div>
                     <div className="field">
                         <label className="is-one-third labelform" htmlFor="password"> Password </label>

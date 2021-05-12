@@ -20,6 +20,6 @@ export let User = {
         });
     },
     login: (data) => {
-        return axios.post(`${REACT_APP_SERVER_ADDRESS}/api/user/login`, data);
+        return axios.post(`${REACT_APP_SERVER_ADDRESS}/api/auth/login`, data);
     }
 };
