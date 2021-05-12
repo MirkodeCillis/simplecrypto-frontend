@@ -69,7 +69,7 @@ function useProvideAuth() {
                 if (err.response && err.response.status === 401)
                     swal.fire({
                         titleText: "Credenziali errate",
-                        text: "L'username o la password non sono corretti.",
+                        text: "L'email o la password non sono corretti.",
                         icon: "error",
                         background: "#f2f6fa",
                         confirmButtonColor: '#0F6FFF'
