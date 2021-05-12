@@ -83,7 +83,7 @@ export default function Signup(props) {
                     </div>
                     <div className="field">
                         <p className="control" style={{textAlign: "right"}}>
-                            Ti sei già registrato? <Link to={"/login"}>Accedi</Link>.
+                            Ti sei già registrato? <Link to={"/public/login"}>Accedi</Link>.
                         </p>
                     </div>
                 </form>

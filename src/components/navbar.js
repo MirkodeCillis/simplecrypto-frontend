@@ -24,7 +24,7 @@ export default function NavBar() {
             <div className="navbar-menu">
                 <div className="navbar-start">
                     <Link className="navbar-item" to="/">Home</Link>
-                    <Link className="navbar-item" to="/currencies">Market</Link>
+                    <Link className="navbar-item" to="/public/currencies">Market</Link>
                     <Link className="navbar-item" to="/community">Community</Link>
                 </div>
                 {auth.user ? (
@@ -38,8 +38,8 @@ export default function NavBar() {
                     </div>
                 ) : (
                     <div className="navbar-end">
-                        <Link className="navbar-item" to="/login">Log In</Link>
-                        <Link className="navbar-item" to="/signup">Sign Up</Link>
+                        <Link className="navbar-item" to="/public/login">Log In</Link>
+                        <Link className="navbar-item" to="/public/signup">Sign Up</Link>
                     </div>
                 )
                 }

@@ -6,7 +6,7 @@ import {Redirect} from "react-router-dom";
 export default function AuthLogin() {
     let auth = useAuth();
     const component = auth.user ? (
-        <Redirect from="/login" to='/'/>
+        <Redirect from="/public/login" to='/'/>
     ) : (
         <Login auth={auth}/>
     );

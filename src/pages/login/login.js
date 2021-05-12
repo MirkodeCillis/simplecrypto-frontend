@@ -55,7 +55,7 @@ export default function Login(props) {
                     </div>
                     <div className="field">
                         <p className="control" style={{textAlign: "right"}}>
-                            Non ti sei ancora registratə? <Link to={"/signup"}>Rimedia subito</Link>.
+                            Non ti sei ancora registratə? <Link to={"/public/signup"}>Rimedia subito</Link>.
                         </p>
                     </div>
                 </form>
