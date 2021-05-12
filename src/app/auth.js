@@ -45,9 +45,9 @@ function useProvideAuth() {
         Cookies.remove(REACT_APP_COOKIENAME);
     }
 
-    const signin = (username, password) => {
+    const signin = (email, password) => {
         let user = {
-            username: username,
+            email: email,
             password: password
         };
         return User.login(user)
