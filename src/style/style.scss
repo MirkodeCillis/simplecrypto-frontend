@@ -42,11 +42,10 @@ $family-sans-serif: "Ubuntu", "Nunito", sans-serif;
 $dark: #393B41;
 $darker: #2F3136;
 $darkest: #202225;
-$light: #ebf2fa;
-$lighter: #f2f6fa;
-$lightest: #f8fafa;
-$grey-dark: $brown;
-$grey-light: $beige-light;
+$light: #F9F9F9;
+$lighter: #FBFBFB;
+$lightest: #FEFEFE;
+$lightgray: #E0E0E0;
 $text: $darkest;
 $primary: #0F6FFF;
 $primary-dark: $primary;
@@ -86,7 +85,8 @@ $input-hover-color: white;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: $dark;
+  background: $lightgray;
+  border-radius: 1em;
 }
 
 *::-webkit-scrollbar-thumb:hover {
@@ -95,13 +95,13 @@ $input-hover-color: white;
 
 //user selection
 ::-moz-selection {
-  background: $secondary;
-  color: $primary
+  background: $primary;
+  color: $body-background-color;
 }
 
 ::selection {
-  background: $secondary;
-  color: $primary
+  background: $primary;
+  color: $body-background-color;
 }
 
 /**
@@ -152,6 +152,37 @@ $input-hover-color: white;
   @extend .is-small;
   margin: 0.2em 0.5em;
   transform: scale(0.8);
+}
+
+/**
+ * ----------------------------------------
+ * community style
+ * ----------------------------------------
+ */
+textarea:focus, input:focus {
+  outline: none;
+}
+
+.new-post {
+  margin: auto;
+  padding: 1em 2%;
+  width: 55%;
+  background-color: $bg-secondary;
+  border-radius: 0 0 0.5em 0.5em;
+  border: 2px solid $lightgray;
+  border-top: 0;
+  text-align: center;
+}
+
+.new-post-message {
+  color: $text;
+  font-size: 1em;
+  padding: 1em;
+  background-color: $lightest;
+  resize: vertical;
+  margin: auto;
+  width: 100%;
+  border: none;
 }
 
 /**

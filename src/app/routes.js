@@ -6,7 +6,7 @@ import AuthLogin from "../pages/login/authLogin";
 import AuthSignup from "../pages/signup/authSignup";
 import PrivateRoute from "./privateRoute";
 import PageNotFound from "../pages/pagenotfound";
-import Community from "../pages/Community";
+import Community from "../pages/Community/Community";
 import Dashboard from "../pages/Dashboard";
 import Currencies from "../pages/Currencies";
 
