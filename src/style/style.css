@@ -115,7 +115,7 @@ textarea:focus, input:focus {
 .new-post-message {
   color: #202225;
   font-size: 1em;
-  padding: 1em;
+  padding: 1em 2em;
   background-color: #FEFEFE;
   resize: vertical;
   margin: auto;
