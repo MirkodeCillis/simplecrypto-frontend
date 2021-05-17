@@ -28,13 +28,6 @@
       "density": "2.0"
     },
     {
-      "src": "/icons/android/android-icon-144x144.png",
-      "sizes": "144x144",
-      "purpose": "any",
-      "type": "image/png",
-      "density": "3.0"
-    },
-    {
       "src": "/icons/android/android-icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
@@ -51,18 +44,6 @@
       "type": "image/png",
       "sizes": "96x96",
       "purpose": "maskable"
-    },
-    {
-      "src": "/icons/favicon/favicon-300x300.png",
-      "type": "image/png",
-      "sizes": "300x300",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/favicon/favicon-512x512.png",
-      "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any"
     }
   ],
   "start_url": "/",
