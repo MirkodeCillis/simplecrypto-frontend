@@ -53,7 +53,7 @@ export default function NewPost() {
     };
 
     return (
-        <div className="new-post">
+        <div className="column is-three-fifths-desktop is-four-fifths-mobile is-centered new-post ">
             <div style={{
                 margin: "0.5em 1em",
                 textAlign: "left",

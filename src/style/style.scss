@@ -119,6 +119,7 @@ $input-hover-color: white;
 
 .navbar-item {
   text-align: center !important;
+  cursor: pointer;
 }
 
 .is-success.nav-button, is-primary.nav-button {
@@ -166,7 +167,6 @@ textarea:focus, input:focus {
 .new-post {
   margin: auto;
   padding: 1em 2%;
-  width: 55%;
   background-color: $bg-secondary;
   border-radius: 0 0 0.5em 0.5em;
   border: 2px solid $lightgray;
@@ -183,6 +183,15 @@ textarea:focus, input:focus {
   margin: auto;
   width: 100%;
   border: none;
+}
+
+.userpost {
+  color: $primary;
+  font-weight: bold;
+}
+
+.listposts {
+  margin: auto;
 }
 
 /**

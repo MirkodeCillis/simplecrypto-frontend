@@ -68,7 +68,8 @@
   max-width: 8em !important; }
 
 .navbar-item {
-  text-align: center !important; }
+  text-align: center !important;
+  cursor: pointer; }
 
 .is-success.nav-button, is-primary.nav-button {
   font-weight: bold; }
@@ -105,7 +106,6 @@ textarea:focus, input:focus {
 .new-post {
   margin: auto;
   padding: 1em 2%;
-  width: 55%;
   background-color: #F9F9F9;
   border-radius: 0 0 0.5em 0.5em;
   border: 2px solid #E0E0E0;
@@ -121,6 +121,13 @@ textarea:focus, input:focus {
   margin: auto;
   width: 100%;
   border: none; }
+
+.userpost {
+  color: #0F6FFF;
+  font-weight: bold; }
+
+.listposts {
+  margin: auto; }
 
 /**
  * ----------------------------------------

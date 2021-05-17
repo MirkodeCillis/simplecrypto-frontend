@@ -10,21 +10,18 @@ export let CommunityRepo = {
             }
         });
     },
-    update: (data, id, token) => {
-        return axios.put(`${REACT_APP_SERVER_ADDRESS}/api/user/${id}`, data, {
+    getLatestPosts: (params, token) => {
+        return axios.get(`${REACT_APP_SERVER_ADDRESS}/api/post/get?page=${params.page}`, {
             headers: {
                 "X-Auth": token
             }
         });
     },
-    validatePassword: (data, token) => {
-        return axios.post(`${REACT_APP_SERVER_ADDRESS}/api/user/validate-password`, data, {
+    getCommentedPosts: (params, token) => {
+        return axios.get(`${REACT_APP_SERVER_ADDRESS}/api/post/get?page=${params.page}&sort=comments.length,desc`, {
             headers: {
                 "X-Auth": token
             }
         });
-    },
-    login: (data) => {
-        return axios.post(`${REACT_APP_SERVER_ADDRESS}/api/auth/login`, data);
     }
 };

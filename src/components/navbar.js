@@ -33,7 +33,7 @@ export default function NavBar() {
                             <FontAwesomeIcon icon={faUser} size="1x"/>
                             &nbsp; {auth.user.username} &nbsp;
                         </Link>
-                        <Link className="navbar-item" onClick={() => auth.signout()}>Log Out</Link>
+                        <span className="navbar-item" onClick={() => auth.signout()}>Log Out</span>
                     </div>
                 ) : (
                     <div className="navbar-end">
