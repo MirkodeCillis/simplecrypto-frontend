@@ -137,13 +137,31 @@ textarea:focus, input:focus {
 
 .listposts {
   margin: auto;
-  background-color: #F9F9F9; }
+  background-color: #F9F9F9;
+  padding-bottom: 1em; }
 
 .messagecontent {
   word-break: break-all;
   margin: 0 0.6em 0.3em 0.6em;
   background-color: #FEFEFE;
   border-radius: 0.1em; }
+
+.new-comment {
+  display: grid;
+  grid-template-columns: 2em auto 8em;
+  align-items: start !important;
+  padding: 1em 0;
+  border-bottom: 1px solid #393B41; }
+
+.new-comment-message {
+  color: #202225;
+  font-size: 1em;
+  padding: 0.5em;
+  background-color: #FEFEFE;
+  resize: vertical;
+  margin: auto;
+  width: 100%;
+  border: none; }
 
 /**
  * ----------------------------------------

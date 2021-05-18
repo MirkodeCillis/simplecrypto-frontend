@@ -5,6 +5,7 @@ import {CommunityRepo} from "../../services/community";
 import Cookies from "js-cookie";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
+import NewComment from "./NewComment";
 
 export default function PostNComments() {
     let { id } = useParams();
@@ -69,9 +70,12 @@ export default function PostNComments() {
                     <div className="messagecontent">
                         {post.message}
                     </div>
-                    <div style={{fontSize: "0.8em", fontWeight: "bold", marginTop: "1em"}}>
-                        Commenti
-                    </div>
+                </div>
+                <div>
+                    <NewComment postId={id}/>
+                </div>
+                <div style={{fontSize: "0.8em", fontWeight: "bold", marginTop: "1em"}}>
+                    Commenti
                 </div>
                 {printComments()}
             </div>

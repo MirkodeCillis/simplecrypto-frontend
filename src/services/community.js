@@ -30,5 +30,12 @@ export let CommunityRepo = {
                 "X-Auth": token
             }
         });
-    }
+    },
+    submitComment: (data, token) => {
+        return axios.post(`${REACT_APP_SERVER_ADDRESS}/api/comment/submit`, data, {
+            headers: {
+                "X-Auth": token
+            }
+        });
+    },
 };

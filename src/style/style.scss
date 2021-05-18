@@ -203,6 +203,7 @@ textarea:focus, input:focus {
 .listposts {
   margin: auto;
   background-color: $light;
+  padding-bottom: 1em;
 }
 
 .messagecontent {
@@ -210,6 +211,25 @@ textarea:focus, input:focus {
   margin: 0 0.6em 0.3em 0.6em;
   background-color: $body-background-color;
   border-radius: 0.1em;
+}
+
+.new-comment {
+  display: grid;
+  grid-template-columns: 2em auto 8em;
+  align-items: start!important;
+  padding: 1em 0;
+  border-bottom: 1px solid $dark;
+}
+
+.new-comment-message {
+  color: $text;
+  font-size: 1em;
+  padding: 0.5em;
+  background-color: $lightest;
+  resize: vertical;
+  margin: auto;
+  width: 100%;
+  border: none;
 }
 
 /**
