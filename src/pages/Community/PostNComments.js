@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import '../../style/style.css';
 import {CommunityRepo} from "../../services/community";
 import Cookies from "js-cookie";
@@ -25,7 +25,7 @@ export default function PostNComments() {
                 console.log(res);
             setPost(res.data);
         });
-    }, [REACT_APP_COOKIENAME]);
+    }, [REACT_APP_COOKIENAME, id]);
 
     const printComments = () => {
         console.log(post);
