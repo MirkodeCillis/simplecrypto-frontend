@@ -9,6 +9,7 @@ import PageNotFound from "../pages/pagenotfound";
 import Community from "../pages/Community/Community";
 import Dashboard from "../pages/Dashboard";
 import Currencies from "../pages/Currencies";
+import PostNComments from "../pages/Community/PostNComments";
 
 export default class Routes extends React.Component {
     constructor(props) {
@@ -27,10 +28,13 @@ export default class Routes extends React.Component {
                 <PrivateRoute exact path="/dashboard">
                     <Dashboard/>
                 </PrivateRoute>
-                <PrivateRoute path="/community">
+                <PrivateRoute exact path="/community">
                     <Community/>
                 </PrivateRoute>
-                <Route path='/404' component={PageNotFound}/>
+                <PrivateRoute exact path="/community/post/:id">
+                    <PostNComments/>
+                </PrivateRoute>
+                <Route exact path='/404' component={PageNotFound}/>
                 <Redirect from='*' to='/404'/>
             </Switch>
         );

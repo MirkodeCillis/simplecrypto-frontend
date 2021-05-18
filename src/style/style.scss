@@ -186,12 +186,30 @@ textarea:focus, input:focus {
 }
 
 .userpost {
+  color: $secondary;
+  font-weight: bold;
+}
+
+.userpost2 {
   color: $primary;
   font-weight: bold;
 }
 
 .listposts {
   margin: auto;
+  background-color: $light;
+  border-bottom: 1px solid $dark;
+}
+.listposts {
+  margin: auto;
+  background-color: $light;
+}
+
+.messagecontent {
+  word-break: break-all;
+  margin: 0 0.6em 0.3em 0.6em;
+  background-color: $body-background-color;
+  border-radius: 0.1em;
 }
 
 /**

@@ -11,14 +11,21 @@ export let CommunityRepo = {
         });
     },
     getLatestPosts: (params, token) => {
-        return axios.get(`${REACT_APP_SERVER_ADDRESS}/api/post/get?page=${params.page}`, {
+        return axios.get(`${REACT_APP_SERVER_ADDRESS}/api/post/getlist?page=${params.page}`, {
             headers: {
                 "X-Auth": token
             }
         });
     },
     getCommentedPosts: (params, token) => {
-        return axios.get(`${REACT_APP_SERVER_ADDRESS}/api/post/get?page=${params.page}&sort=comments.length,desc`, {
+        return axios.get(`${REACT_APP_SERVER_ADDRESS}/api/post/getlist?page=${params.page}&sort=comments.length,desc`, {
+            headers: {
+                "X-Auth": token
+            }
+        });
+    },
+    getPost: (id, token) => {
+        return axios.get(`${REACT_APP_SERVER_ADDRESS}/api/post/get?id=${id}`, {
             headers: {
                 "X-Auth": token
             }

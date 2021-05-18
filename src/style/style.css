@@ -123,11 +123,27 @@ textarea:focus, input:focus {
   border: none; }
 
 .userpost {
+  color: #679436;
+  font-weight: bold; }
+
+.userpost2 {
   color: #0F6FFF;
   font-weight: bold; }
 
 .listposts {
-  margin: auto; }
+  margin: auto;
+  background-color: #F9F9F9;
+  border-bottom: 1px solid #393B41; }
+
+.listposts {
+  margin: auto;
+  background-color: #F9F9F9; }
+
+.messagecontent {
+  word-break: break-all;
+  margin: 0 0.6em 0.3em 0.6em;
+  background-color: #FEFEFE;
+  border-radius: 0.1em; }
 
 /**
  * ----------------------------------------

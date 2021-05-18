@@ -5,6 +5,7 @@ import {CommunityRepo} from "../../services/community";
 import Cookies from "js-cookie";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom";
 
 export default function Community() {
     const {REACT_APP_COOKIENAME} = process.env;
@@ -37,10 +38,14 @@ export default function Community() {
                         </span>
                         &nbsp;<span style={{fontSize: "0.6em"}}>{post.publishedAt}</span>
                     </div>
-                    <div style={{
-                        wordBreak: "break-all",
-                        maxWidth: "90%"
-                    }}>{post.message}</div>
+                    <div className="messagecontent">
+                        {post.message}
+                    </div>
+                    <div style={{fontSize: "0.8em", fontWeight: "bold"}}>
+                        <Link to={`/community/post/${post.id}`}>
+                            {(post.comments.length > 0) ? `${post.comments.length} commenti...` : "Ancora nessun commento..."}
+                        </Link>
+                    </div>
                 </div>
             </div>);
         });
