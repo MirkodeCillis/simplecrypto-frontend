@@ -12,7 +12,7 @@ export default function NavBar() {
         <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <a className="navbar-item" href="/">
-                    <img height="1.5rem" width="auto" src="/icons/logo.svg" alt="SimpleCrypto Logo"/>
+                    <img height="1.5rem" width="auto" src="/icons/logo_white.svg" alt="SimpleCrypto Logo"/>
                 </a>
                 <div tabIndex={0} role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
                     <span aria-hidden="true"/>

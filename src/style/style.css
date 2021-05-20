@@ -27,6 +27,10 @@
  * set colors and Bulma global variables
  * ----------------------------------------
  */
+nav * {
+  font-weight: bold;
+  letter-spacing: 0.05em; }
+
 /**
  * ----------------------------------------
  * scrollbar and user select style
@@ -3440,7 +3444,7 @@ table th {
     font-size: 1.5rem; }
 
 .navbar {
-  background-color: #FBFBFB;
+  background-color: #0F6FFF;
   min-height: 3.25rem;
   position: relative;
   z-index: 30; }
@@ -3938,7 +3942,7 @@ body.has-navbar-fixed-bottom {
   overflow-y: hidden; }
 
 .navbar-burger {
-  color: #202225;
+  color: #F9F9F9;
   cursor: pointer;
   display: block;
   height: 3.25rem;
@@ -3976,7 +3980,7 @@ body.has-navbar-fixed-bottom {
 
 .navbar-item,
 .navbar-link {
-  color: #202225;
+  color: #F9F9F9;
   display: block;
   line-height: 1.5;
   padding: 0.5rem 0.75rem;
@@ -3995,8 +3999,8 @@ a.navbar-item,
   .navbar-link:focus-within,
   .navbar-link:hover,
   .navbar-link.is-active {
-    background-color: #fafafa;
-    color: #679436; }
+    background-color: #0D5BD0;
+    color: #FFF; }
 
 .navbar-item {
   flex-grow: 0;
@@ -4059,7 +4063,7 @@ a.navbar-item,
   .navbar-link::after {
     display: none; }
   .navbar-menu {
-    background-color: #FBFBFB;
+    background-color: #0F6FFF;
     box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
     padding: 0.5rem 0; }
     .navbar-menu.is-active {
@@ -4224,7 +4228,7 @@ a.navbar-item,
   .navbar-link.is-active:not(:focus):not(:hover) {
     background-color: transparent; }
   .navbar-item.has-dropdown:focus .navbar-link, .navbar-item.has-dropdown:hover .navbar-link, .navbar-item.has-dropdown.is-active .navbar-link {
-    background-color: #fafafa; } }
+    background-color: #0D5BD0; } }
 
 .hero.is-fullheight-with-navbar {
   min-height: calc(100vh - 3.25rem); }

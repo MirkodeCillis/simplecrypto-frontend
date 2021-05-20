@@ -59,12 +59,20 @@ $fullhd-enabled: false;
 // Update some of Bulma's component variables
 $body-background-color: $lightest;
 $bg-secondary: $light;
-$navbar-background-color: $lighter;
+$navbar-background-color: $primary;
+$navbar-item-color: $light;
 $navbar-padding-vertical: 2rem;
+$navbar-item-hover-background-color: #0D5BD0;
+$navbar-item-hover-color: #FFF;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 $input-hover-color: white;
+
+nav * {
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
 
 /**
  * ----------------------------------------
