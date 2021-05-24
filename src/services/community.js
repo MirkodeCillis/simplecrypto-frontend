@@ -17,8 +17,8 @@ export let CommunityRepo = {
             }
         });
     },
-    getCommentedPosts: (params, token) => {
-        return axios.get(`${REACT_APP_SERVER_ADDRESS}/api/post/getlist?page=${params.page}&sort=comments.length,desc`, {
+    getHotPosts: (params, token) => {
+        return axios.get(`${REACT_APP_SERVER_ADDRESS}/api/post/getlist?page=${params.page}&sort=comments.size,desc`, {
             headers: {
                 "X-Auth": token
             }

@@ -4,7 +4,7 @@ import NewPost from "./NewPost";
 import {CommunityRepo} from "../../services/community";
 import Cookies from "js-cookie";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faUser} from "@fortawesome/free-solid-svg-icons";
+import {faClock, faFire, faTimes, faTimesCircle, faUser} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
 
 export default function Community() {
@@ -20,6 +20,24 @@ export default function Community() {
             setListPosts(res.data.content);
         });
     }, [REACT_APP_COOKIENAME, postParams]);
+
+    const orderByComments = () => {
+        document.getElementById("btncomments").classList.toggle("is-active");
+        document.getElementById("btnnewer").classList.toggle("is-active");
+        CommunityRepo.getHotPosts(postParams,
+            Cookies.get(REACT_APP_COOKIENAME)).then(res => {
+            setListPosts(res.data.content);
+        });
+    };
+
+    const orderByNewer = () => {
+        document.getElementById("btncomments").classList.toggle("is-active");
+        document.getElementById("btnnewer").classList.toggle("is-active");
+        CommunityRepo.getLatestPosts(postParams,
+            Cookies.get(REACT_APP_COOKIENAME)).then(res => {
+            setListPosts(res.data.content);
+        });
+    };
 
     const printPosts = () => {
         console.log(listPosts);
@@ -54,6 +72,20 @@ export default function Community() {
     return (
         <div>
             <NewPost />
+
+            <div className="columns column is-centered">
+                <div className="column is-one-third is-centered has-text-centered">
+                    <button className="button is-success is-active" onClick={orderByNewer}
+                            id="btnnewer" style={{borderRadius: "0.3em 0 0 0.3em"}}>
+                        <FontAwesomeIcon icon={faClock}/>&nbsp;&nbsp;Più Recenti
+                    </button>
+                    <button className="button is-success" onClick={orderByComments}
+                            id="btncomments" style={{borderRadius: "0 0.3em 0.3em 0"}}>
+                        <FontAwesomeIcon icon={faFire}/>&nbsp;&nbsp;Hot Posts
+                    </button>
+                </div>
+            </div>
+
             {printPosts()}
 
         </div>
