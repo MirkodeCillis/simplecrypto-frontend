@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import '../../style/style.css';
 import NewPost from "./NewPost";
-import {CommunityRepo} from "../../services/community";
+import {CommunityRepo} from "../../services/CommunityRepo";
 import Cookies from "js-cookie";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faClock, faFire, faTimes, faTimesCircle, faUser} from "@fortawesome/free-solid-svg-icons";
+import {faClock, faFire, faUser} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
 
 export default function Community() {

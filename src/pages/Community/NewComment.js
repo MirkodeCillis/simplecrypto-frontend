@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import '../../style/style.css';
 import {useAuth} from "../../app/auth";
-import {CommunityRepo} from "../../services/community";
+import {CommunityRepo} from "../../services/CommunityRepo";
 import swal from "sweetalert2";
 import Cookies from 'js-cookie';
 

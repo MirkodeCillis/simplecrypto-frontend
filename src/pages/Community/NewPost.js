@@ -3,7 +3,7 @@ import '../../style/style.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser} from "@fortawesome/free-solid-svg-icons";
 import {useAuth} from "../../app/auth";
-import {CommunityRepo} from "../../services/community";
+import {CommunityRepo} from "../../services/CommunityRepo";
 import swal from "sweetalert2";
 import Cookies from 'js-cookie';
 

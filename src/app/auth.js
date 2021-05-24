@@ -1,5 +1,5 @@
 import React, {createContext, useContext, useState} from "react";
-import {User} from "../services/user";
+import {UserRepo} from "../services/UserRepo";
 import swal from "sweetalert2";
 import {parseJwt} from "../components/utils";
 import Cookies from 'js-cookie';
@@ -50,7 +50,7 @@ function useProvideAuth() {
             email: email,
             password: password
         };
-        return User.login(user)
+        return UserRepo.login(user)
             .then(response => {
                 let user = response.data;
                 swal.fire({
@@ -90,7 +90,7 @@ function useProvideAuth() {
             email: email,
             password: password
         }
-        return User.signup(user)
+        return UserRepo.signup(user)
             .then(response => {
                 let user = {
                     id: response.data.id,
@@ -127,7 +127,7 @@ function useProvideAuth() {
     };
 
     const updateWpassword = (user, oldpw, newpw, jwt) => {
-        User.validatePassword({password: oldpw}, jwt)
+        UserRepo.validatePassword({password: oldpw}, jwt)
             .then(res => {
                 user.password = newpw;
                 updateUser(user, jwt);
@@ -151,11 +151,11 @@ function useProvideAuth() {
     }
 
     const validatePassword = (data) => {
-        return User.validatePassword(data, Cookies.get(REACT_APP_COOKIENAME))
+        return UserRepo.validatePassword(data, Cookies.get(REACT_APP_COOKIENAME))
     };
 
     const updateUser = (user, jwt) => {
-        User.update(user, user.id, jwt)
+        UserRepo.update(user, user.id, jwt)
             .then(response => {
                 let user = response.data;
                 swal.fire({
