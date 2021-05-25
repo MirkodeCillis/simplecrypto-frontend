@@ -5,7 +5,7 @@ import {CryptoRepo} from "../services/CryptoRepo";
 
 export default function Currencies() {
     const [cryptos, setCryptos] = useState([]);
-    const [colors, setColors] = useState([
+    const [colors] = useState([
         '#FF8829',
         '#6063E2',
         '#C3A734',

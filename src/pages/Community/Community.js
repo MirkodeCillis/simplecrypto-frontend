@@ -10,7 +10,7 @@ import {Link} from "react-router-dom";
 export default function Community() {
     const {REACT_APP_COOKIENAME} = process.env;
     const [listPosts, setListPosts] = useState([]);
-    const [postParams, setPostParams] = useState({
+    const [postParams] = useState({
         page: 0
     });
 

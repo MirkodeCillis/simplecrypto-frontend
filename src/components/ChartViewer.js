@@ -1,12 +1,15 @@
 import { timeParse } from "d3-time-format";
 import {useCallback, useEffect, useState} from "react";
 import {Line} from "react-chartjs-2";
+import {Chart} from "chart.js";
+const defaults = Chart.defaults;
+defaults.plugins.legend.display = false;
 
-var parseDate = timeParse("%d/%m/%Y %H:%M");
+let parseDate = timeParse("%d/%m/%Y %H:%M");
 
 export default function ChartViewer(props) {
     const [data, setData] = useState([]);
-    const [options, setOptions] = useState({
+    const [options] = useState({
         scales: {
             yAxes: [
                 {
@@ -16,6 +19,11 @@ export default function ChartViewer(props) {
                 },
             ],
         },
+        plugins: {
+            legend: {
+                display: false,
+            },
+        }
     });
 
     const parseData = useCallback(() => {
@@ -40,7 +48,7 @@ export default function ChartViewer(props) {
             parsedData.datasets[0].data.push(value.y);
         });
         return parsedData;
-    }, [props.data]);
+    }, [props.data, props.color, props.title]);
 
     useEffect(() => {
         let data = parseData();
