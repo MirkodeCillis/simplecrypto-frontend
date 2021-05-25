@@ -9,6 +9,7 @@ export default function Currencies() {
         '#FF8829',
         '#6063E2',
         '#C3A734',
+        '#A800E6',
         '#004BDB',
         '#000000'
     ])
@@ -24,6 +25,11 @@ export default function Currencies() {
 
             return (
                 <div key={i} className="column is-four-fifths-desktop is-four-fifths-mobile is-centered">
+                    <div className="crypto-title">
+                        <img src={`/img/${crypto.nome}-logo.png`}/>
+                        <span className="crypto-name" style={{color: colors[i]}}>{crypto.nome}</span>
+                        <span className="crypto-value">Valore attuale: {crypto.valore}€</span>
+                    </div>
                     <ChartViewer title={crypto.nome} data={crypto.history} color={colors[i]}/>
                 </div>);
         });

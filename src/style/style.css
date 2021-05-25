@@ -182,6 +182,22 @@ textarea:focus, input:focus {
   text-transform: uppercase;
   letter-spacing: 0.05em; }
 
+.crypto-title {
+  display: flex;
+  align-items: center; }
+  .crypto-title img {
+    height: 3em;
+    width: auto; }
+  .crypto-title .crypto-name {
+    margin-left: 0.1em;
+    font-size: 2.5em;
+    font-weight: bold; }
+  .crypto-title .crypto-value {
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 2.5em;
+    margin-left: 2em; }
+
 /**
  * ----------------------------------------
  * imports from Bulma
