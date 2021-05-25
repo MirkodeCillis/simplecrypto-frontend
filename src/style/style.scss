@@ -239,6 +239,22 @@ textarea:focus, input:focus {
   width: 100%;
   border: none;
 }
+/**
+ * ----------------------------------------
+ * market style
+ * ----------------------------------------
+ */
+.titlepage {
+  display: block;
+  margin: 0.4em auto;
+  color: $primary;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+}
 
 /**
  * ----------------------------------------
