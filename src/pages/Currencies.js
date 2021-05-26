@@ -24,7 +24,7 @@ export default function Currencies() {
 
     const printCharts = () => {
         return cryptos.map((crypto, i) => {
-
+            if (crypto.id === 7) return null;
             return (
                 <div key={i} className="column is-three-fifths-desktop is-four-fifths-mobile is-centered">
                     <div className="crypto-title">
