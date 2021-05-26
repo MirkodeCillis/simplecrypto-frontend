@@ -24,9 +24,9 @@ export default function Currencies() {
         return cryptos.map((crypto, i) => {
 
             return (
-                <div key={i} className="column is-four-fifths-desktop is-four-fifths-mobile is-centered">
+                <div key={i} className="column is-three-fifths-desktop is-four-fifths-mobile is-centered">
                     <div className="crypto-title">
-                        <img src={`/img/${crypto.nome}-logo.png`}/>
+                        <img src={`/img/${crypto.nome}-logo.png`} alt={`${crypto.nome} Logo`}/>
                         <span className="crypto-name" style={{color: colors[i]}}>{crypto.nome}</span>
                         <span className="crypto-value">Valore attuale: {crypto.valore}€</span>
                     </div>
@@ -37,8 +37,10 @@ export default function Currencies() {
 
     return (
         <div>
-            <span className="titlepage">Il mercato negli ultimi 3 gironi</span>
-            {printCharts()}
+            <span className="titlepage">Il mercato negli ultimi 3 giorni</span>
+            <div className="charts-container">
+                {printCharts()}
+            </div>
         </div>
     );
 }

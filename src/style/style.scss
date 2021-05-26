@@ -253,7 +253,8 @@ textarea:focus, input:focus {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .crypto-title {
@@ -263,9 +264,13 @@ textarea:focus, input:focus {
   & img {
     height: 3em;
     width: auto;
+    user-select: none;
+    -webkit-user-select: none;
   }
 
   & .crypto-name {
+    user-select: none;
+    -webkit-user-select: none;
     margin-left: 0.1em;
     font-size: 2.5em;
     font-weight: bold;
@@ -277,6 +282,13 @@ textarea:focus, input:focus {
     line-height: 2.5em;
     margin-left: 2em;
   }
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
 }
 
 /**

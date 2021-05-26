@@ -180,15 +180,21 @@ textarea:focus, input:focus {
   font-size: 2em;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.05em; }
+  letter-spacing: 0.05em;
+  user-select: none;
+  -webkit-user-select: none; }
 
 .crypto-title {
   display: flex;
   align-items: center; }
   .crypto-title img {
     height: 3em;
-    width: auto; }
+    width: auto;
+    user-select: none;
+    -webkit-user-select: none; }
   .crypto-title .crypto-name {
+    user-select: none;
+    -webkit-user-select: none;
     margin-left: 0.1em;
     font-size: 2.5em;
     font-weight: bold; }
@@ -197,6 +203,12 @@ textarea:focus, input:focus {
     font-size: 1.5em;
     line-height: 2.5em;
     margin-left: 2em; }
+
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center; }
 
 /**
  * ----------------------------------------
