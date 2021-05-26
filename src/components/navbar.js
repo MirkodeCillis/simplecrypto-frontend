@@ -24,12 +24,12 @@ export default function NavBar() {
             <div className="navbar-menu">
                 <div className="navbar-start">
                     <Link className="navbar-item" to="/">Home</Link>
-                    <Link className="navbar-item" to="/public/currencies">Market</Link>
                     <Link className="navbar-item" to="/community">Community</Link>
+                    <Link className="navbar-item" to="/public/currencies">Market</Link>
                 </div>
                 {auth.user ? (
                     <div className="navbar-end">
-                        <Link className="navbar-item" to={`/dashboard/${auth.user.id}`}>
+                        <Link className="navbar-item" to={`/user/${auth.user.id}`}>
                             <FontAwesomeIcon icon={faUser} size="1x"/>
                             &nbsp; {auth.user.username} &nbsp;
                         </Link>

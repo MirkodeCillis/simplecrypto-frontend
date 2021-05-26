@@ -25,7 +25,7 @@ export default class Routes extends React.Component {
                 <Route exact path="/public/login" component={AuthLogin}/>
                 <Route exact path="/public/signup" component={AuthSignup}/>
                 <Route exact path="/public/currencies" component={Currencies}/>
-                <PrivateRoute exact path="/dashboard/:id">
+                <PrivateRoute exact path="/user/:id">
                     <Dashboard/>
                 </PrivateRoute>
                 <PrivateRoute exact path="/community">

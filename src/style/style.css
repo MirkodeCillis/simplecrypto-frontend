@@ -198,17 +198,23 @@ textarea:focus, input:focus {
     margin-left: 0.1em;
     font-size: 2.5em;
     font-weight: bold; }
-  .crypto-title .crypto-value {
-    font-weight: bold;
-    font-size: 1.5em;
-    line-height: 2.5em;
-    margin-left: 2em; }
 
-.charts-container {
+.crypto-value {
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 2.5em;
+  margin-left: 2em; }
+
+.charts-container,
+.assets-container {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   justify-items: center; }
+
+.asset-tile {
+  display: grid;
+  grid-template-columns: 15em 15em; }
 
 /**
  * ----------------------------------------
