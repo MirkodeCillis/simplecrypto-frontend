@@ -22,9 +22,8 @@ export default function PostNComments() {
     useEffect(() => {
         CommunityRepo.getPost(id,
             Cookies.get(REACT_APP_COOKIENAME)).then(res => {
-                console.log(res);
-            setPost(res.data);
-        });
+                setPost(res.data);
+            });
     }, [REACT_APP_COOKIENAME, id]);
 
     const printComments = () => {
