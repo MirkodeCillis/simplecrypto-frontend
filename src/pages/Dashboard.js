@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import {UserRepo} from "../services/UserRepo";
 import ChartViewer from "../components/ChartViewer";
 import {useAuth} from "../app/auth";
+import swal from "sweetalert2";
 
 export default function Dashboard() {
     const auth = useAuth();
@@ -26,6 +27,17 @@ export default function Dashboard() {
             setHistory(res.data.historyWallet);
             setUser(res.data);
             setLoading(false);
+        }).catch(() => {
+            swal.fire({
+                titleText: "Utente non esistente",
+                text: "L'id non corrisponde a nessun utente.",
+                icon: "error",
+                background: "#f2f6fa",
+                confirmButtonColor: '#0F6FFF'
+            }).then((res) => {
+                setLoading(false);
+                window.location = "/";
+            });
         });
     }, [setHistory, setUser, id]);
 
@@ -37,6 +49,7 @@ export default function Dashboard() {
         );
 
     const printAssets = () => {
+        if (user.investments === undefined) return;
         return user.investments.map((crypto, i) => {
 
             return (
@@ -54,7 +67,7 @@ export default function Dashboard() {
 
     const buyAssets = () => {
         if (auth.user.id === parseInt(id))
-            return (<div>diocaasdsad</div>);
+            return (<div>diocane sì funziona</div>);
         else
             return (<div>No buono</div>);
     };
