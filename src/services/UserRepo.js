@@ -21,5 +21,8 @@ export let UserRepo = {
     },
     login: (data) => {
         return axios.post(`${REACT_APP_SERVER_ADDRESS}/api/auth/login`, data);
+    },
+    get: (id) => {
+        return axios.get(`${REACT_APP_SERVER_ADDRESS}/api/user/${id}`);
     }
 };

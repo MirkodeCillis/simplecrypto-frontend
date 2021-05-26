@@ -8,7 +8,7 @@ import {faUser} from "@fortawesome/free-solid-svg-icons";
 import NewComment from "./NewComment";
 
 export default function PostNComments() {
-    let { id } = useParams();
+    const { id } = useParams();
     const {REACT_APP_COOKIENAME} = process.env;
     const [post, setPost] = useState({
         comments: [],

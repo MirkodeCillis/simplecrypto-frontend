@@ -29,7 +29,7 @@ export default function NavBar() {
                 </div>
                 {auth.user ? (
                     <div className="navbar-end">
-                        <Link className="navbar-item" to="/dashboard">
+                        <Link className="navbar-item" to={`/dashboard/${auth.user.id}`}>
                             <FontAwesomeIcon icon={faUser} size="1x"/>
                             &nbsp; {auth.user.username} &nbsp;
                         </Link>
