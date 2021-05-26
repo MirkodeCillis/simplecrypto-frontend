@@ -12,7 +12,8 @@ export default function Currencies() {
         '#C3A734',
         '#A800E6',
         '#004BDB',
-        '#000000'
+        '#000000',
+        '#FFDC16'
     ]);
 
     useEffect(() => {

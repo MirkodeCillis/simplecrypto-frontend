@@ -28,7 +28,7 @@ export default function ChartViewer(props) {
 
     const parseData = useCallback(() => {
         let parsedData = {labels: [], datasets: [{
-                borderWidth: 6,
+                borderWidth: 5,
                 label: props.title,
                 data: [],
                 fill: false,

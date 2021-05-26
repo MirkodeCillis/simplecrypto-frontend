@@ -294,7 +294,15 @@ textarea:focus, input:focus {
 
 .asset-tile {
   display: grid;
-  grid-template-columns: 15em 15em;
+  grid-template-columns: 22em 15em;
+}
+
+.asset-tile-buy {
+  display: grid;
+  grid-gap: 0.5em;
+  align-items: center;
+  grid-template-columns: 22em 15em 5em 5em;
+
 }
 
 /**

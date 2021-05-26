@@ -5,6 +5,7 @@ import {UserRepo} from "../services/UserRepo";
 import ChartViewer from "../components/ChartViewer";
 import {useAuth} from "../app/auth";
 import swal from "sweetalert2";
+import BuynSell from "../components/BuynSell";
 
 export default function Dashboard() {
     const auth = useAuth();
@@ -19,7 +20,8 @@ export default function Dashboard() {
         '#C3A734',
         '#A800E6',
         '#004BDB',
-        '#000000'
+        '#000000',
+        '#FFDC16'
     ]);
 
     useEffect(() => {
@@ -67,9 +69,9 @@ export default function Dashboard() {
 
     const buyAssets = () => {
         if (auth.user.id === parseInt(id))
-            return (<div>diocane sì funziona</div>);
+            return (<BuynSell user={user}/>);
         else
-            return (<div>No buono</div>);
+            return (<div></div>);
     };
 
     return (
