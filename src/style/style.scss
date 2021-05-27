@@ -49,7 +49,7 @@ $lightgray: #E0E0E0;
 $text: $darkest;
 $primary: #0F6FFF;
 $primary-dark: $primary;
-$secondary: #679436;
+$secondary: #87B7FF;
 $success: $secondary;
 $link: $secondary;
 $link-hover: $text;
@@ -72,6 +72,11 @@ $input-hover-color: white;
 nav * {
   font-weight: bold;
   letter-spacing: 0.05em;
+}
+
+.container-centered {
+  margin: auto;
+  text-align: center;
 }
 
 /**

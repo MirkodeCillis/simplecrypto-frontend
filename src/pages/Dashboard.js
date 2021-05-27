@@ -61,7 +61,9 @@ export default function Dashboard() {
                             <img src={`/img/${crypto.cryptocurrency.nome}-logo.png`} alt={`${crypto.cryptocurrency.nome} Logo`}/>
                             <span className="crypto-name" style={{color: colors[crypto.cryptocurrency.id]}}>{crypto.cryptocurrency.nome}</span>
                         </div>
-                        <span className="crypto-value">Quantità: {crypto.importo}</span>
+                        <span className="crypto-value">
+                            Quantità: { (crypto.cryptocurrency.id === 7) ? crypto.importo.toFixed(2) : crypto.importo }
+                        </span>
                     </div>
                 </div>
             );

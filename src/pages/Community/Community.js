@@ -121,14 +121,14 @@ export default function Community() {
 
             {printPosts()}
 
-            <nav className="pagination" role="navigation" aria-label="pagination">
+            <div className="container-centered column">
                 <button className="button is-success"
                     onClick={() => loadPosts(-1)}
                     disabled={postParams.page === 0}>Previous</button>
                 <button className="button is-success"
                     onClick={() => loadPosts(1)}
                     disabled={postParams.page === totalPages-1}>Next page</button>
-            </nav>
+            </div>
         </div>
     );
 }
