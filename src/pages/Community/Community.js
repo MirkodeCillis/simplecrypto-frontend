@@ -24,7 +24,7 @@ export default function Community() {
             settotalPages(res.data.totalPages);
         });
         isLoaded(true);
-    }, [REACT_APP_COOKIENAME, postParams]);
+    }, [REACT_APP_COOKIENAME, postParams, loaded]);
 
     const orderByComments = () => {
         if (document.getElementById("btncomments").classList.contains("is-active")) return;
