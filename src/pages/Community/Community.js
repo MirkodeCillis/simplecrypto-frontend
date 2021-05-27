@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 
 export default function Community() {
     const {REACT_APP_COOKIENAME} = process.env;
+    const [loaded, isLoaded] = useState(false);
     const [listPosts, setListPosts] = useState([]);
     const [totalPages, settotalPages] = useState(0);
     const [postParams, setPostParams] = useState({
@@ -16,11 +17,13 @@ export default function Community() {
     });
 
     useEffect(() => {
-        CommunityRepo.getLatestPosts(postParams,
+        if (loaded) return;
+        CommunityRepo.getLatestPosts({page: 0},
             Cookies.get(REACT_APP_COOKIENAME)).then(res => {
             setListPosts(res.data.content);
             settotalPages(res.data.totalPages);
         });
+        isLoaded(true);
     }, [REACT_APP_COOKIENAME, postParams]);
 
     const orderByComments = () => {

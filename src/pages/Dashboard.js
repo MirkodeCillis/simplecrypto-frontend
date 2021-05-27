@@ -63,7 +63,8 @@ export default function Dashboard() {
                         </div>
                         <span className="crypto-value">Quantità: {crypto.importo}</span>
                     </div>
-                </div>);
+                </div>
+            );
         });
     };
 
