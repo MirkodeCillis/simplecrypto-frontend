@@ -149,7 +149,7 @@ export default function BuynSell(props) {
 
     return (
         <div>
-            <span className="titlepage">Compra o vendi asset</span>
+            <span className="titlepage">Compra/Vendi Asset</span>
             {printAssets()}
         </div>
     );
