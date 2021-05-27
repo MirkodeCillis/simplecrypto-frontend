@@ -63,32 +63,33 @@ export default function BuynSell(props) {
         });
         let val = swalval && (swalval.value || swalval.dismiss);
         if (val && val.importo ) {
-            sellAsset(crypto, val.importo);
+            buyAsset(crypto, val.importo);
         }
     };
 
     const modalSell = async (crypto) => {
         const userInvestment = _.filter(props.user.investments, (elem) => {
             return elem.cryptocurrency.id === crypto.id
-        });
+        })[0];
+
         const swalval = await swal.fire({
-            title: `Quanto desideri vendere da ${crypto.nome}?`,
+            title: `Quanto desideri vendere da ${crypto.nome}?<br>Max: ${(userInvestment.importo * crypto.valore).toFixed(2)}€`,
             focusConfirm: false,
-            html: ' <input class="swal2-input" id="newvalue" type="number" step="0.01" min="0" placeholder="Importo in Euro" /> €',
+            html: ` <input class="swal2-input" id="sell" type="number" step="0.01" min="0" max="${userInvestment.importo * crypto.valore}" placeholder="Importo in Euro" /> €`,
             type: 'warning',
             showCancelButton: true,
             cancelButtonText: "Annulla",
             cancelButtonColor: 'grey',
-            confirmButtonText: 'Investi!',
+            confirmButtonText: 'Vendi!',
             background: "#f2f6fa",
             confirmButtonColor: '#0F6FFF',
             preConfirm: () => ({
-                importo: document.getElementById('newvalue').value
+                importo: document.getElementById('sell').value
             })
         });
         let val = swalval && (swalval.value || swalval.dismiss);
         if (val && val.importo ) {
-            buyAsset(crypto, val.importo);
+            sellAsset(crypto, val.importo);
         }
     };
 
@@ -103,7 +104,7 @@ export default function BuynSell(props) {
             Cookies.get(REACT_APP_COOKIENAME)).then( res => {
                 swal.fire({
                     titleText: "Acquisto effettuato!",
-                    text: "Aggiorna la pagina per aggiornare gli asset attuali. In seguito verrà conteggiato anche nell'investimento.",
+                    text: "Aggiorna la pagina per aggiornare gli asset attuali.\nIn seguito verrà conteggiato anche nell'investimento.",
                     icon: "success",
                     background: "#f2f6fa",
                     confirmButtonColor: '#0F6FFF'
@@ -126,11 +127,11 @@ export default function BuynSell(props) {
             user_id: auth.user.id,
             importo: value
         };
-        CryptoRepo.buy(data,
+        CryptoRepo.sell(data,
             Cookies.get(REACT_APP_COOKIENAME)).then( res => {
             swal.fire({
-                titleText: "Acquisto effettuato!",
-                text: "Aggiorna la pagina per aggiornare gli asset attuali. In seguito verrà conteggiato anche nell'investimento.",
+                titleText: "Vendita effettuata!",
+                text: "Aggiorna la pagina per aggiornare gli asset attuali.\nIn seguito verrà conteggiato anche nell'investimento.",
                 icon: "success",
                 background: "#f2f6fa",
                 confirmButtonColor: '#0F6FFF'
