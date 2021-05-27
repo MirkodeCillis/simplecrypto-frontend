@@ -22,6 +22,7 @@ export default function Community() {
     }, [REACT_APP_COOKIENAME, postParams]);
 
     const orderByComments = () => {
+        if (document.getElementById("btncomments").classList.contains("is-active")) return;
         document.getElementById("btncomments").classList.toggle("is-active");
         document.getElementById("btnnewer").classList.toggle("is-active");
         CommunityRepo.getHotPosts(postParams,
@@ -31,6 +32,7 @@ export default function Community() {
     };
 
     const orderByNewer = () => {
+        if (document.getElementById("btnnewer").classList.contains("is-active")) return;
         document.getElementById("btncomments").classList.toggle("is-active");
         document.getElementById("btnnewer").classList.toggle("is-active");
         CommunityRepo.getLatestPosts(postParams,
