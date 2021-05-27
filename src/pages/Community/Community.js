@@ -10,7 +10,8 @@ import {Link} from "react-router-dom";
 export default function Community() {
     const {REACT_APP_COOKIENAME} = process.env;
     const [listPosts, setListPosts] = useState([]);
-    const [postParams] = useState({
+    const [totalPages, settotalPages] = useState(0);
+    const [postParams, setPostParams] = useState({
         page: 0
     });
 
@@ -18,6 +19,7 @@ export default function Community() {
         CommunityRepo.getLatestPosts(postParams,
             Cookies.get(REACT_APP_COOKIENAME)).then(res => {
             setListPosts(res.data.content);
+            settotalPages(res.data.totalPages);
         });
     }, [REACT_APP_COOKIENAME, postParams]);
 
@@ -25,9 +27,12 @@ export default function Community() {
         if (document.getElementById("btncomments").classList.contains("is-active")) return;
         document.getElementById("btncomments").classList.toggle("is-active");
         document.getElementById("btnnewer").classList.toggle("is-active");
-        CommunityRepo.getHotPosts(postParams,
+        CommunityRepo.getHotPosts({page: 0},
             Cookies.get(REACT_APP_COOKIENAME)).then(res => {
             setListPosts(res.data.content);
+        });
+        setPostParams({
+            page: 0
         });
     };
 
@@ -35,9 +40,12 @@ export default function Community() {
         if (document.getElementById("btnnewer").classList.contains("is-active")) return;
         document.getElementById("btncomments").classList.toggle("is-active");
         document.getElementById("btnnewer").classList.toggle("is-active");
-        CommunityRepo.getLatestPosts(postParams,
+        CommunityRepo.getLatestPosts({page: 0},
             Cookies.get(REACT_APP_COOKIENAME)).then(res => {
             setListPosts(res.data.content);
+        });
+        setPostParams({
+            page: 0
         });
     };
 
@@ -71,6 +79,26 @@ export default function Community() {
         });
     }
 
+    const loadPosts = (increment) => {
+        if (increment === 1 && postParams.page === totalPages-1) return;
+        if (increment === -1 && postParams.page === 0) return;
+
+        if (document.getElementById("btnnewer").classList.contains("is-active")) {
+            CommunityRepo.getLatestPosts({page: postParams.page + increment},
+                Cookies.get(REACT_APP_COOKIENAME)).then(res => {
+                setListPosts(res.data.content);
+            });
+        } else if (document.getElementById("btncomments").classList.contains("is-active")) {
+            CommunityRepo.getHotPosts({page: postParams.page + increment},
+                Cookies.get(REACT_APP_COOKIENAME)).then(res => {
+                setListPosts(res.data.content);
+            });
+        }
+        setPostParams({
+            page: postParams.page + increment
+        });
+    };
+
     return (
         <div>
             <NewPost />
@@ -90,6 +118,14 @@ export default function Community() {
 
             {printPosts()}
 
+            <nav className="pagination" role="navigation" aria-label="pagination">
+                <button className="button is-success"
+                    onClick={() => loadPosts(-1)}
+                    disabled={postParams.page === 0}>Previous</button>
+                <button className="button is-success"
+                    onClick={() => loadPosts(1)}
+                    disabled={postParams.page === totalPages-1}>Next page</button>
+            </nav>
         </div>
     );
 }
