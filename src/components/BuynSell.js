@@ -29,6 +29,10 @@ export default function BuynSell(props) {
         return cryptos.map((crypto, i) => {
             if (crypto.id === 7) return (<div style={{display: "none"}} />);
 
+            const userInvestment = _.filter(props.user.investments, (elem) => {
+                return elem.cryptocurrency.id === crypto.id
+            })[0];
+
             return (
                 <div key={i} className="column is-one-fifths-desktop is-four-fifths-mobile is-centered">
                     <div className="asset-tile-buy">
@@ -38,7 +42,9 @@ export default function BuynSell(props) {
                         </div>
                         <span className="crypto-value">@ {crypto.valore}€</span>
                         <button className="button is-primary" onClick={() => { modalBuy(crypto) }}>Compra</button>
-                        <button className="button is-success" onClick={() => { modalSell(crypto) }}>Vendi</button>
+                        <button className="button is-success"
+                                onClick={() => { modalSell(crypto) }}
+                                disabled={userInvestment === undefined || (userInvestment.importo * crypto.valore) < 0.01}>Vendi</button>
                     </div>
                 </div>
             );
