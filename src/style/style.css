@@ -246,10 +246,17 @@ textarea:focus, input:focus {
   .home-section.sect4 {
     background-color: #E8E8E8; }
 
-.home-container.centered {
+.centered {
   position: relative;
   left: 50%;
   top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+.not-exactly-centered {
+  position: relative;
+  left: 50%;
+  top: 40%;
   transform: translate(-50%, -50%);
   text-align: center; }
 
@@ -284,6 +291,22 @@ div.img.sect1 {
   width: 70%;
   font-size: 2em;
   font-weight: bold; }
+
+.signup {
+  margin: 0;
+  height: 95vh;
+  overflow-y: hidden; }
+  .signup.caption {
+    background-color: #0F6FFF;
+    user-select: none;
+    -webkit-user-select: none; }
+    .signup.caption div {
+      text-align: center;
+      margin: 1em auto; }
+    .signup.caption img {
+      height: 20vh; }
+  .signup.pretitle {
+    color: #FEFEFE; }
 
 /**
  * ----------------------------------------

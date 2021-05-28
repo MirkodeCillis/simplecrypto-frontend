@@ -6,7 +6,7 @@ export default function Home() {
         <div>
             <div className="columns">
                 <section className="column is-half-desktop is-full-mobile home-section sect1">
-                    <div className="home-container centered">
+                    <div className="home-container not-exactly-centered">
                         <span className="pretitle sect1">
                             it's just a
                         </span>

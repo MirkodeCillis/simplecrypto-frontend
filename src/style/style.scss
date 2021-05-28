@@ -337,15 +337,23 @@ textarea:focus, input:focus {
   }
 }
 
-.home-container {
+.centered {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
-  &.centered {
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+.not-exactly-centered {
+  position: relative;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.home-container {
 
   & .pretitle.sect1 {
     display: block;
@@ -385,6 +393,33 @@ div.img.sect1 {
   width: 70%;
   font-size: 2em;
   font-weight: bold;
+}
+
+
+.signup {
+  margin: 0;
+  height: 95vh;
+  overflow-y: hidden;
+
+  &.caption {
+    background-color: $primary;
+    user-select: none;
+    -webkit-user-select: none;
+
+    & div {
+      text-align: center;
+      margin: 1em auto;
+    }
+
+    & img {
+      height: 20vh;
+    }
+  }
+
+  &.pretitle {
+    color: $lightest;
+  }
+
 }
 
 /**
