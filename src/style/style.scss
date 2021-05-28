@@ -350,7 +350,7 @@ textarea:focus, input:focus {
   & .pretitle.sect1 {
     display: block;
     color: $lightest;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: 2.5em;
     text-align: center;
     text-transform: uppercase;
@@ -361,7 +361,30 @@ textarea:focus, input:focus {
 }
 
 img.title {
-  height: 20vh;
+  height: 15vh;
+}
+
+img.caption {
+  height: 30vh;
+}
+
+div.img.sect1 {
+  position: relative;
+  left: 50%;
+  top: 55vh;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  & img {
+    height: 25vh;
+  }
+}
+
+.caption {
+  margin: 1em auto;
+  width: 70%;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 /**
