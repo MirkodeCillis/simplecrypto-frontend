@@ -55,7 +55,7 @@ $link: $secondary;
 $link-hover: $text;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
-$grey: #E8E8E8;
+$gray: #E8E8E8;
 
 // Update some of Bulma's component variables
 $body-background-color: $lightest;
@@ -308,6 +308,60 @@ textarea:focus, input:focus {
   grid-gap: 0.5em;
   align-items: center;
   grid-template-columns: 22em 20em 5em 5em;
+}
+
+/**
+ * ----------------------------------------
+ * market style
+ * ----------------------------------------
+ */
+
+.home-section {
+  margin: 0;
+  height: 100vh;
+  user-select: none;
+  -webkit-user-select: none;
+  
+  &.sect1 {
+    background-color: $primary;
+    color: $lightest;
+  }
+  &.sect2 {
+    background-color: $lightest;
+  }
+  &.sect3 {
+    background-color: $lightest;
+  }
+  &.sect4 {
+    background-color: $gray;
+  }
+}
+
+.home-container {
+
+  &.centered {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  & .pretitle.sect1 {
+    display: block;
+    color: $lightest;
+    font-weight: bold;
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+img.title {
+  height: 20vh;
 }
 
 /**

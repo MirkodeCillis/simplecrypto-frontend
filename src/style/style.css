@@ -228,6 +228,47 @@ textarea:focus, input:focus {
 
 /**
  * ----------------------------------------
+ * market style
+ * ----------------------------------------
+ */
+.home-section {
+  margin: 0;
+  height: 100vh;
+  user-select: none;
+  -webkit-user-select: none; }
+  .home-section.sect1 {
+    background-color: #0F6FFF;
+    color: #FEFEFE; }
+  .home-section.sect2 {
+    background-color: #FEFEFE; }
+  .home-section.sect3 {
+    background-color: #FEFEFE; }
+  .home-section.sect4 {
+    background-color: #E8E8E8; }
+
+.home-container.centered {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+.home-container .pretitle.sect1 {
+  display: block;
+  color: #FEFEFE;
+  font-weight: bold;
+  font-size: 2.5em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  user-select: none;
+  -webkit-user-select: none; }
+
+img.title {
+  height: 20vh; }
+
+/**
+ * ----------------------------------------
  * imports from Bulma
  * ----------------------------------------
  */
@@ -539,10 +580,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: #4a4a4a !important; }
 
 .has-text-grey {
-  color: #E8E8E8 !important; }
+  color: #7a7a7a !important; }
 
 .has-background-grey {
-  background-color: #E8E8E8 !important; }
+  background-color: #7a7a7a !important; }
 
 .has-text-grey-light {
   color: #b5b5b5 !important; }
@@ -2542,7 +2583,7 @@ table th {
   .button.is-static, .is-static.nav-button {
     background-color: whitesmoke;
     border-color: #dbdbdb;
-    color: #E8E8E8;
+    color: #7a7a7a;
     box-shadow: none;
     pointer-events: none; }
   .button.is-rounded, .is-rounded.nav-button {
@@ -2711,31 +2752,31 @@ table th {
     background-color: whitesmoke;
     border-color: whitesmoke;
     box-shadow: none;
-    color: #E8E8E8; }
+    color: #7a7a7a; }
     .input[disabled]::-moz-placeholder, .textarea[disabled]::-moz-placeholder, .select select[disabled]::-moz-placeholder,
     fieldset[disabled] .input::-moz-placeholder,
     fieldset[disabled] .textarea::-moz-placeholder,
     fieldset[disabled] .select select::-moz-placeholder,
     .select fieldset[disabled] select::-moz-placeholder {
-      color: rgba(232, 232, 232, 0.3); }
+      color: rgba(122, 122, 122, 0.3); }
     .input[disabled]::-webkit-input-placeholder, .textarea[disabled]::-webkit-input-placeholder, .select select[disabled]::-webkit-input-placeholder,
     fieldset[disabled] .input::-webkit-input-placeholder,
     fieldset[disabled] .textarea::-webkit-input-placeholder,
     fieldset[disabled] .select select::-webkit-input-placeholder,
     .select fieldset[disabled] select::-webkit-input-placeholder {
-      color: rgba(232, 232, 232, 0.3); }
+      color: rgba(122, 122, 122, 0.3); }
     .input[disabled]:-moz-placeholder, .textarea[disabled]:-moz-placeholder, .select select[disabled]:-moz-placeholder,
     fieldset[disabled] .input:-moz-placeholder,
     fieldset[disabled] .textarea:-moz-placeholder,
     fieldset[disabled] .select select:-moz-placeholder,
     .select fieldset[disabled] select:-moz-placeholder {
-      color: rgba(232, 232, 232, 0.3); }
+      color: rgba(122, 122, 122, 0.3); }
     .input[disabled]:-ms-input-placeholder, .textarea[disabled]:-ms-input-placeholder, .select select[disabled]:-ms-input-placeholder,
     fieldset[disabled] .input:-ms-input-placeholder,
     fieldset[disabled] .textarea:-ms-input-placeholder,
     fieldset[disabled] .select select:-ms-input-placeholder,
     .select fieldset[disabled] select:-ms-input-placeholder {
-      color: rgba(232, 232, 232, 0.3); }
+      color: rgba(122, 122, 122, 0.3); }
 
 .input, .textarea {
   box-shadow: none;
@@ -2837,7 +2878,7 @@ table th {
   fieldset[disabled] .radio,
   .checkbox input[disabled],
   .radio input[disabled] {
-    color: #E8E8E8;
+    color: #7a7a7a;
     cursor: not-allowed; }
 
 .radio + .radio {
@@ -2965,7 +3006,7 @@ table th {
   .select.is-large {
     font-size: 1.5rem; }
   .select.is-disabled::after {
-    border-color: #E8E8E8; }
+    border-color: #7a7a7a; }
   .select.is-fullwidth {
     width: 100%; }
     .select.is-fullwidth select {
