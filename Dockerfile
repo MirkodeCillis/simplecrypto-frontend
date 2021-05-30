@@ -1,7 +1,7 @@
 # Build lane
-FROM node:latest as builder
+FROM node:latest-alpine as builder
 
-RUN apt -q update && apt -q upgrade -y && apt -q install python make g++ gcc
+RUN apk update && apk add python make g++ gcc build-base build-deps
 
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
@@ -9,8 +9,6 @@ WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 ADD package.json /usr/src/app/package.json
 
-RUN npm install -g npm@next
-RUN npm install node-gyp
 RUN npm install
 
 ADD . /usr/src/app
