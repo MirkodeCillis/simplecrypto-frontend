@@ -1,7 +1,7 @@
 # Build lane
 FROM node:latest as builder
 
-RUN apt update && apt install python make g++
+RUN apt -q update && apt -q install python make g++ build-dependencies build-base gcc
 
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
