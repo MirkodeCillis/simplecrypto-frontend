@@ -1,7 +1,7 @@
 # Build lane
-FROM node:latest-alpine as builder
+FROM node:latest as builder
 
-RUN apk update && apk add python make g++
+RUN apt update && apt add python make g++
 
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
