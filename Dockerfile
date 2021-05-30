@@ -1,5 +1,7 @@
 # Build lane
-FROM node:latest as builder
+FROM node:next as builder
+
+RUN apk update && apk add python make g++
 
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
