@@ -1,7 +1,7 @@
 # Build lane
 FROM node:10.16.0-alpine as builder
 
-RUN apk update && apk add build-base python make g++ gcc
+RUN apk update && apk add -q build-base python make g++ gcc
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 ADD package.json /usr/src/app/package.json
 
-RUN npm install
+RUN npm install --silent
 
 ADD . /usr/src/app
 
