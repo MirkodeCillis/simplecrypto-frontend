@@ -7,8 +7,8 @@ WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 ADD package.json /usr/src/app/package.json
 
-RUN npm install -g npm@latest
-RUN npm install --silent
+RUN npm install -g npm@next
+RUN npm install
 
 ADD . /usr/src/app
 
