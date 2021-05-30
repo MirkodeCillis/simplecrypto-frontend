@@ -1,5 +1,5 @@
 # Build lane
-FROM node:next as builder
+FROM node:latest as builder
 
 RUN apk update && apk add python make g++
 
