@@ -1,7 +1,7 @@
 # Build lane
-FROM node:latest-alpine as builder
+FROM node:10.16.0-alpine as builder
 
-RUN apk update && apk add python make g++ gcc build-base build-deps
+RUN apk update && apk add build-deps build-base python make g++ gcc
 
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
