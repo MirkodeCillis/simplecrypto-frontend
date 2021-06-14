@@ -39,7 +39,7 @@ export default function Currencies() {
 
     return (
         <div>
-            <span className="titlepage">Il mercato negli ultimi 3 giorni</span>
+            <span className="titlepage">Il mercato nelle ultime 24 ore</span>
             <div className="charts-container">
                 {printCharts()}
             </div>

@@ -80,7 +80,7 @@ export default function Dashboard() {
     return (
         <div>
             <div>
-                <span className="titlepage">Investimento di {user.username} negli ultimi 3 giorni</span>
+                <span className="titlepage">Investimento di {user.username} nelle ultime 24 ore</span>
                 <div className="charts-container">
                     <div className="column is-three-fifths-desktop is-four-fifths-mobile is-centered">
                         <div className="crypto-title">
